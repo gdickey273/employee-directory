@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import TableRow from "../TableRow";
 
 function Table(props) {
     return (
@@ -10,27 +11,27 @@ function Table(props) {
           <tr>
   
             <th scope="col">
-              <a href="#" onClick={props.sortArray}>
+              <a href="#" data-camel-case="firstName" onClick={props.setArrayState}>
                 First Name
               </a>
             </th>
             <th scope="col">
-              <a href="#" onClick={props.sortArray}>
+              <a href="#" data-camel-case="lastName" onClick={props.setArrayState}>
                 Last Name
               </a>
             </th>
             <th scope="col">
-              <a href="#" onClick={props.sortArray}>
+              <a href="#" data-camel-case="jobTitle" onClick={props.setArrayState}>
                 Job Title
               </a>
             </th>
             <th scope="col">
-              <a href="#" onClick={props.sortArray}>
+              <a href="#" data-camel-case="department" onClick={props.setArrayState}>
                 Department
               </a>
             </th>
             <th scope="col">
-              <a href="#" onClick={props.sortArray}>
+              <a href="#" data-camel-case="email" onClick={props.setArrayState}>
                 Email
               </a>
             </th>
@@ -43,14 +44,8 @@ function Table(props) {
         </thead>
       
         <tbody>
-          {props.displayArray.map((member) => (
-            <tr>
-              <td>{member.firstName}</td>
-              <td>{member.lastName}</td>
-              <td>{member.jobTitle}</td>
-              <td>{member.department}</td>
-              <td>{member.email}</td>
-            </tr>
+          {props.displayArray.map((memb) => (
+            <TableRow member={memb} key={memb.email} />
           ))}
         </tbody>
       </table>
