@@ -8,36 +8,35 @@ function Table(props) {
       <table className="table">
         <thead>
           <tr>
-            <a href="#" onClick={props.sortArray}>
-              <th scope="col">
+            
+            <th scope="col">
+              <a href="#" onClick={props.sortArray}>
                 First Name
-              </th>
-            </a>
-            <a href="#" onClick={props.sortArray}>
-              <th scope="col">
-                Last Name
+              </a>
             </th>
-            </a>
-            <a href="#" onClick={props.sortArray}>
-              <th scope="col">
-                First Name
-              </th>
-            </a>
-            <a href="#" onClick={props.sortArray}>
-              <th scope="col">
+            <th scope="col">
+              <a href="#" onClick={props.sortArray}>
+                Last Name
+              </a>
+            </th>
+            <th scope="col">
+              <a href="#" onClick={props.sortArray}>
                 Job Title
-              </th>
-            </a>
-            <a href="#" onClick={props.sortArray}>
-              <th scope="col">
-               Department
-              </th>
-            </a>
-            <a href="#" onClick={props.sortArray}>
-              <th scope="col">
+              </a>
+            </th>
+            <th scope="col">
+              <a href="#" onClick={props.sortArray}>
+                Department
+              </a>
+            </th>
+            <th scope="col">
+              <a href="#" onClick={props.sortArray}>
                 Email
-              </th>
-            </a>
+              </a>
+            </th>
+            
+            
+            
 
 
           </tr>
@@ -45,7 +44,7 @@ function Table(props) {
       
         <tbody>
           {props.displayArray.map((member) => (
-            <tr>
+            <tr scope="row">
               <td>{member.firstName}</td>
               <td>{member.lastName}</td>
               <td>{member.jobTitle}</td>
