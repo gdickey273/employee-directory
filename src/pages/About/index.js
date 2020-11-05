@@ -1,5 +1,5 @@
 import React from "react";
-import ImgCard from "../components/ImgCard";
+import ImgCard from "../../components/ImgCard";
 
 function About () {
   return (
