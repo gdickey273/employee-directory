@@ -8,16 +8,15 @@ function Navbar() {
       <Link className="navbar-brand" to="/">
         The Collection
       </Link>
-      <div>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link
               to="/"
-              className={
-                window.location.pathname === "/" || window.location.pathname === "/about"
-                ? "nav-link-active"
-                : "nav-link"
-              }
+              className="nav-link"
             >
               About
             </Link>
@@ -25,9 +24,7 @@ function Navbar() {
           <li className="nav-item">
             <Link
               to="/band-members"
-              className={
-                window.location.pathname === "/band-members" ? "nav-link-active" : "nav-link"
-              }
+              className="nav-link"
             >
               Band Members
             </Link>
