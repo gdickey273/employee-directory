@@ -1,12 +1,22 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import { getBandMembers } from "../../utils/API";
 
 import FilterForm from "../../components/FilterForm";
+import Table from "../../components/Table";
 
 class BandMembers extends Component {
   state = {
-    bandMembers: [],
+    bandMembers: null,
+    displayArray: null,
     filter: ""
+  }
+
+  componentDidMount() {
+    const data = getBandMembers();
+
+    this.setState({bandMembers : data});
+    this.setState({displayArray: data});
+    console.log(data);
   }
   
   handleInputChange = (event) => {
@@ -14,12 +24,21 @@ class BandMembers extends Component {
     console.log(this.state.filter);
   }
   
+  setArrayState = (event) => {
+    console.log(event.target.textContent);
+  }
   render () {
     return (
       <>
         <FilterForm 
           handleInputChange = {this.handleInputChange}
         />
+        {this.state.displayArray &&
+          <Table
+            setArrayState = {this.setArrayState}
+            displayArray = {this.state.displayArray}
+          />
+        }
       </>
     )
   }
