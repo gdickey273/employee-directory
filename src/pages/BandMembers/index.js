@@ -14,29 +14,41 @@ class BandMembers extends Component {
   componentDidMount() {
     const data = getBandMembers();
 
-    this.setState({bandMembers : data});
-    this.setState({displayArray: data});
+    this.setState({ bandMembers: data });
+    this.setState({ displayArray: data });
     console.log(data);
   }
-  
+
   handleInputChange = (event) => {
-    this.setState({ filter: event.target.value}); 
+    this.setState({ filter: event.target.value });
     console.log(this.state.filter);
   }
-  
+
   setArrayState = (event) => {
-    console.log(event.target.textContent);
+    const camel = event.target.dataset["camelCase"];
+    
+    let arr = this.state.displayArray;
+
+    arr.sort((a, b) => {
+      if(a[camel] < b[camel]) { return -1; }
+      if(a[camel] > b[camel]) { return 1; }
+      return 0;
+    });
+
+    this.setState({ displayArray: arr });  
   }
-  render () {
+
+
+  render() {
     return (
       <>
-        <FilterForm 
-          handleInputChange = {this.handleInputChange}
+        <FilterForm
+          handleInputChange={this.handleInputChange}
         />
         {this.state.displayArray &&
           <Table
-            setArrayState = {this.setArrayState}
-            displayArray = {this.state.displayArray}
+            setArrayState={this.setArrayState}
+            displayArray={this.state.displayArray}
           />
         }
       </>
