@@ -8,7 +8,7 @@ function Table(props) {
       <table className="table">
         <thead>
           <tr>
-            
+  
             <th scope="col">
               <a href="#" onClick={props.sortArray}>
                 First Name
@@ -44,7 +44,7 @@ function Table(props) {
       
         <tbody>
           {props.displayArray.map((member) => (
-            <tr scope="row">
+            <tr>
               <td>{member.firstName}</td>
               <td>{member.lastName}</td>
               <td>{member.jobTitle}</td>
