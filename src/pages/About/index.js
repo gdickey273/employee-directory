@@ -3,7 +3,7 @@ import ImgCard from "../../components/ImgCard";
 
 function About () {
   return (
-    <ImgCard src="assets/images/beautiful-life.jpg"/>
+    <ImgCard src="https://f4.bcbits.com/img/a2900582108_10.jpg"/>
   )
 }
 
