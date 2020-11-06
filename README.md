@@ -62,4 +62,4 @@
 
 
   ## Link
-  Link to deployed application: https://gdickey273.github.io/
+  Link to deployed application: https://gdickey273.github.io/employee-directory
