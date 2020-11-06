@@ -1,0 +1,18 @@
+.card{
+  width: 50%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card-img-overlay{
+  width: 45%;
+}
+
+h5 {
+  font-size: 2vw;
+}
+
+p {
+  font-size: 1.5vw;
+}

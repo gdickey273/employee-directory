@@ -6,8 +6,8 @@ import Table from "../../components/Table";
 
 class BandMembers extends Component {
   state = {
-    bandMembers: null,
-    displayArray: null,
+    bandMembers: [],
+    displayArray: [],
     filter: ""
   }
 
@@ -19,9 +19,17 @@ class BandMembers extends Component {
     console.log(data);
   }
 
+  // componentDidUpdate(prevProps, prevState) {
+    
+  // }
+
   handleInputChange = (event) => {
-    this.setState({ filter: event.target.value });
-    console.log(this.state.filter);
+    const filt = event.target.value.toLowerCase();
+        
+    const filtered = this.state.bandMembers.filter(member => member.firstName.toLowerCase().startsWith(filt) || member.lastName.toLowerCase().startsWith(filt));
+        
+    this.setState({ displayArray: filtered });
+       
   }
 
   setArrayState = (event) => {

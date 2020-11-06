@@ -9,9 +9,9 @@ class FilterForm extends Component {
         <div className="form-group">
           <label htmlFor="name">Filter Table By Member Name</label>
           <input
-            value={this.props.filter}
-            onChange={this.props.handleInputChange}
-            name="name"
+            //value={this.props.filter}
+            onChange={(e) => this.props.handleInputChange(e)}
+            //name="name"
             type="text"
             className="form-control"
             placeholder="Band Member Name"
